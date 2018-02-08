@@ -1,0 +1,14 @@
+[Unit]
+Description=SSR python port Client using ssr profiles.json
+After=network.target
+Requires=network.target
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+ExecStart=/usr/bin/python /usr/local/shadowsocksr/shadowsocks/local.py -c /etc/ssr/%I.json -d start
+Execstop=/usr/bin/python /usr/local/shadowsocksr/shadowsocks/local.py -c /etc/ssr/%I.json -d stop
+
+
+[Install]
+WantedBy=multi-user.target
