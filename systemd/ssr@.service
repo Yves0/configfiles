@@ -7,7 +7,7 @@ Requires=network.target
 Type=forking
 RemainAfterExit=yes
 ExecStart=/usr/bin/python /usr/local/shadowsocksr/shadowsocks/local.py -c /etc/ssr/%I.json -d start
-Execstop=/usr/bin/python /usr/local/shadowsocksr/shadowsocks/local.py -c /etc/ssr/%I.json -d stop
+ExecStop=/usr/bin/python /usr/local/shadowsocksr/shadowsocks/local.py -c /etc/ssr/%I.json -d stop
 
 
 [Install]
